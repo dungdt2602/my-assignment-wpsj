@@ -28,6 +28,7 @@ public class DataAccess extends ConnectionDatabase {
     private final static String QUERY_GET_BOOK_IN_CATEGORY = "SELECT * FROM BookDetails WHERE CategoryID=? ORDER BY Publication DESC";
     private final static String QUERY_SEARCH_BOOK = "SELECT * FROM BookDetails WHERE BookName LIKE ? OR [Desciption] LIKE ? ORDER BY Publication DESC";
     private final static String QUERY_ADD_COMMENT ="INSERT INTO Comment(CommentID,BookID,Title,Email,[Content]) VALUES (? ? ? ? ?)";
+    private final static String QUERY_GET_COMMENT = "SELECT * FROM Comment WHERE BookID=?";
 
     public ListData<Category> getAllCategory() throws Exception {
         ListData<Category> listCategory = new ListData<Category>();
@@ -200,5 +201,33 @@ public class DataAccess extends ConnectionDatabase {
             prep.executeUpdate();
         } catch (Exception e) {
         }
+    }
+    public ListData<Comment> getComment(String BookID)throws Exception{
+        ListData<Comment> listComment = new ListData<Comment>();
+        Connection conn = null;
+        try {
+            conn=getConnection();
+            PreparedStatement prep = conn.prepareStatement(QUERY_GET_COMMENT);
+            prep.setObject(1, BookID);
+            ResultSet rs = prep.executeQuery();
+            ArrayList<Comment> comments = new  ArrayList<Comment>();
+            while (rs.next()) {                
+                Comment comment = new Comment();
+                comment.setId(rs.getString("CommentID"));
+                comment.setBook(rs.getString("BookID"));
+                comment.setTitle(rs.getString("Title"));
+                comment.setEmail(rs.getString("Email"));
+                comment.setContent(rs.getString("[Content]"));
+                comments.add(comment);
+            }
+            listComment.setData(comments);
+            rs.close();
+        } catch (Exception e) {
+        }finally{
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return listComment;
     }
 }
