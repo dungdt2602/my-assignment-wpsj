@@ -4,6 +4,9 @@
     Author     : JACK
 --%>
 
+<%@page import="com.sun.media.sound.ModelAbstractChannelMixer"%>
+<%@page import="javax.jws.WebParam.Mode"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -24,6 +27,9 @@
         <script type="text/javascript">var Translator = new Translate([]);</script>
     </head>
     <body class=" cms-index-index cms-home">
+            <jsp:useBean id="books" scope="request" class="Model.Entity.ListData"/>
+            <jsp:useBean id="book" scope="request" class="Model.Entity.Book"/>
+                <c:set var="count" value="1"/>
         <div class="wrapper">
             <div class="page">
                 <div class="header-container"><div class="header">
@@ -165,26 +171,7 @@
                                     <div class="left-top-title-box"><div class="right-top-title-box"><div class="side-top-title-box">&nbsp;</div></div></div>        <h2>Popular Tags</h2>
                                 </div>
                                 <div class="side-left-box"><div class="side-right-box">
-                                        <div class="block-content">
-                                            <ul>
-                                                <li><a href="http://cms.template-help.com/magento_23462/tag/product/list/tagId/8/" style="font-size:145%;">Media</a></li>
-                                                <li><a href="http://cms.template-help.com/magento_23462/tag/product/list/tagId/13/" style="font-size:75%;">burner</a></li>
-                                                <li><a href="http://cms.template-help.com/magento_23462/tag/product/list/tagId/11/" style="font-size:75%;">device</a></li>
-                                                <li><a href="http://cms.template-help.com/magento_23462/tag/product/list/tagId/1/" style="font-size:145%;">electronics</a></li>
-                                                <li><a href="http://cms.template-help.com/magento_23462/tag/product/list/tagId/2/" style="font-size:75%;">engineering</a></li>
-                                                <li><a href="http://cms.template-help.com/magento_23462/tag/product/list/tagId/3/" style="font-size:75%;">games</a></li>
-                                                <li><a href="http://cms.template-help.com/magento_23462/tag/product/list/tagId/9/" style="font-size:75%;">health</a></li>
-                                                <li><a href="http://cms.template-help.com/magento_23462/tag/product/list/tagId/12/" style="font-size:145%;">memory</a></li>
-                                                <li><a href="http://cms.template-help.com/magento_23462/tag/product/list/tagId/10/" style="font-size:75%;">photos</a></li>
-                                                <li><a href="http://cms.template-help.com/magento_23462/tag/product/list/tagId/4/" style="font-size:75%;">physics</a></li>
-                                                <li><a href="http://cms.template-help.com/magento_23462/tag/product/list/tagId/5/" style="font-size:75%;">technology</a></li>
-                                                <li><a href="http://cms.template-help.com/magento_23462/tag/product/list/tagId/7/" style="font-size:145%;">video</a></li>
-                                                <li><a href="http://cms.template-help.com/magento_23462/tag/product/list/tagId/6/" style="font-size:75%;">wireless</a></li>
-                                            </ul>
-                                            <div class="actions">
-                                                <a href="http://cms.template-help.com/magento_23462/tag/list/">View All Tags</a>
-                                            </div>
-                                        </div>
+                                        
                                     </div></div><div class="left-bot-box"><div class="right-bot-box"><div class="side-bot-box">&nbsp;</div></div></div></div>
                             <script type="text/javascript">
                                 //<![CDATA[
@@ -206,44 +193,6 @@
                                 </div>
                                 <form id="pollForm" action="http://cms.template-help.com/magento_23462/poll/vote/add/poll_id/1/" method="post" onsubmit="return validatePollAnswerIsSelected();">
                                     <div class="side-left-box"><div class="side-right-box">
-                                            <fieldset class="block-content">
-                                                <legend>Community Poll</legend>
-                                                <h3>What is the main reason for you to purchase products online? </h3>
-                                                <ol>
-                                                    <li>
-                                                        <input name="vote" class="radio poll_vote" id="vote_5" value="5" type="radio">
-                                                        <span class="label"><label for="vote_5">More convenient shipping and  delivery</label></span>
-                                                    </li>
-                                                    <li>
-                                                        <input name="vote" class="radio poll_vote" id="vote_6" value="6" type="radio">
-                                                        <span class="label"><label for="vote_6">Lower price</label></span>
-                                                    </li>
-                                                    <li>
-                                                        <input name="vote" class="radio poll_vote" id="vote_7" value="7" type="radio">
-                                                        <span class="label"><label for="vote_7">Bigger choice</label></span>
-                                                    </li>
-
-                                                    <li>
-                                                        <input name="vote" class="radio poll_vote" id="vote_8" value="8" type="radio">
-                                                        <span class="label"><label for="vote_8">Centralized product search  procedure (without having to  leave your home)</label></span>
-                                                    </li>
-                                                    <li>
-                                                        <input name="vote" class="radio poll_vote" id="vote_9" value="9" type="radio">
-                                                        <span class="label"><label for="vote_9">Payments security</label></span>
-                                                    </li>
-                                                    <li>
-                                                        <input name="vote" class="radio poll_vote" id="vote_10" value="10" type="radio">
-                                                        <span class="label"><label for="vote_10">30-day Money Back Guarantee</label></span>
-                                                    </li>
-                                                    <li>
-                                                        <input name="vote" class="radio poll_vote" id="vote_11" value="11" type="radio">
-                                                        <span class="label"><label for="vote_11">Other</label></span>
-                                                    </li>
-                                                </ol>
-                                                <div class="actions">
-                                                    <button type="submit" class="button"><span><span><span>Vote</span></span></span></button>
-                                                </div>
-                                            </fieldset>
                                         </div></div><div class="left-bot-box"><div class="right-bot-box"><div class="side-bot-box">&nbsp;</div></div></div>    </form>
                             </div>
                         </div>
@@ -257,19 +206,24 @@
                                 </div>
                                 <div class="left-top"><div class="right-top"><div class="side-top">&nbsp;</div></div></div>
                                 <div class="side-left main-html">
-                                    <div class="side-right"><div class="inside-center"><div class="category-products">
+                                    <div class="side-right">
+                                        <div class="inside-center"><div class="category-products">
                                                 <table id="products-grid-table" class="products-grid">
                                                     <tbody>
-                                                        <tr class="first odd">
+                                                        <c:forEach var="book" items="${books.data}">
+                                                            <c:if test="${count ==1}">
+                                                        <tr>
+                                                            </c:if>
                                                             <td>
-                                                                <h3 class="product-name"><a title="Kaplan AP World History 2 009 Edition" alt="Kaplan AP World History 2 009 Edition" href="http://cms.template-help.com/magento_23462/books/science-education/kaplan-ap-world-history-2-009-edition.html">Kaplan AP World History 2 009 Edition</a></h3>
-                                                                <div class="img-block"><a title="Kaplan AP World History 2 009 Edition" href="http://cms.template-help.com/magento_23462/books/science-education/kaplan-ap-world-history-2-009-edition.html" class="product-image"><img title="Kaplan AP World History 2 009 Edition" alt="Kaplan AP World History 2 009 Edition" src="images/img.jpg" height="153" width="117"></a></div>
+                                                                <h3 class="product-name"><a title="Kaplan" alt="Kaplan AP World History 2 009 Edition" href="/"><jsp:getProperty name="book" property="name"/></a></h3>
+                                                                <div class="img-block"><a title="Kaplan AP World History 2 009 Edition" href="/" class="product-image"><img title="Kaplan AP World History 2 009 Edition" alt="Kaplan AP World History 2 009 Edition" src="<jsp:getProperty name="book" property="images"/>" height="153" width="117"></a></div>
                                                                 <div class="price-box"><span id="product-price-13" class="regular-price"><span class="price"><span class="small-price-txt">$</span>17.50</span></span></div>
                                                                 <div class="details-block">
                                                                     <div class="details-block"><a class="details-link" href="/">Details</a></div>
-                                                                    <a class="no-decore link-cart" href="http://cms.template-help.com/magento_23462/books/science-education/kaplan-ap-world-history-2-009-edition.html"><button class="button"><span><span><span>Add to cart</span></span></span></button></a>
+                                                                    <a class="no-decore link-cart" href="/"><button class="button"><span><span><span>Add to cart</span></span></span></button></a>
                                                                 </div><div class="clear-block"></div></td>
-                                                            <td>
+                                                            <c:set value="${count+1}" var="count"/>
+<!--                                                            <td>
                                                                 <h3 class="product-name"><a title="Act Like a Lady, Think Like a Man" alt="Act Like a Lady, Think Like a Man" href="http://cms.template-help.com/magento_23462/books/literature-fiction/act-like-a-lady-think-like-a-man.html">Act Like a Lady, Think Like a Man</a></h3>
                                                                 <div class="img-block"><a title="Act Like a Lady, Think Like a Man" href="http://cms.template-help.com/magento_23462/books/literature-fiction/act-like-a-lady-think-like-a-man.html" class="product-image"><img title="Act Like a Lady, Think Like a Man" alt="Act Like a Lady, Think Like a Man" src="images/img2.jpg" height="153" width="117"></a></div>
                                                                 <div class="price-box"><span id="product-price-13" class="regular-price"><span class="price"><span class="small-price-txt">$</span>17.50</span></span></div>
@@ -284,12 +238,16 @@
                                                                 <div class="details-block">
                                                                     <div class="details-block"><a class="details-link" href="http://cms.template-help.com/magento_23462/books/science-education/breaking-dawn.html">Details</a></div>
                                                                     <a class="no-decore link-cart" href="http://cms.template-help.com/magento_23462/books/science-education/breaking-dawn.html"><button class="button"><span><span><span>Add to cart</span></span></span></button></a>
-                                                                </div><div class="clear-block"></div></td>
+                                                                </div><div class="clear-block"></div></td>-->
+<c:if test="${count==3}">
                                                         </tr>
-                                                        <tr class="even">
+                                                        <c:set value="1" var="count"/>
+                                                        </c:if>
+                                                        </c:forEach>
+<!--                                                        <tr class="even">
                                                             <td class="devider-product last" colspan="3">
-                                                            </td></tr>
-                                                        <tr class="first odd row2">
+                                                            </td></tr>-->
+<!--                                                        <tr class="first odd row2">
                                                             <td>
                                                                 <h3 class="product-name prd-nm"><a title="Watchmen" alt="Watchmen" href="http://cms.template-help.com/magento_23462/audiobooks/watchmen.html">Watchmen</a></h3>
                                                                 <div class="img-block"><a title="Watchmen" href="http://cms.template-help.com/magento_23462/audiobooks/watchmen.html" class="product-image"><img title="Watchmen" alt="Watchmen" src="images/img4.jpg" height="153" width="117"></a></div>
@@ -314,7 +272,7 @@
                                                                     <div class="details-block"><a class="details-link" href="http://cms.template-help.com/magento_23462/businness/strengths-finder-2-0.html">Details</a></div>
                                                                     <a class="no-decore link-cart" href="http://cms.template-help.com/magento_23462/businness/strengths-finder-2-0.html"><button class="button"><span><span><span>Add to cart</span></span></span></button></a>
                                                                 </div><div class="clear-block"></div></td>
-                                                        </tr>
+                                                        </tr>-->
                                                     </tbody>
                                                 </table>
                                             </div>
