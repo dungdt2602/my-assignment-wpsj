@@ -13,5 +13,5 @@ import javax.servlet.http.HttpServletResponse;
  * @author JACK
  */
 public interface Action {
-   public String doAction(HttpServletRequest request,HttpServletResponse response);
+   public String doAction(HttpServletRequest request,HttpServletResponse response) throws Exception;
 }
