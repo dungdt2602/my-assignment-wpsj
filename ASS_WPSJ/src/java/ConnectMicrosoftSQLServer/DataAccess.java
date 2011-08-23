@@ -54,12 +54,12 @@ public class DataAccess {
         }
     }
 
-    public Book getBookDetails(String BookId) throws Exception {
+    public Book getBookDetails(String BookID) throws Exception {
         try {
             ConnectionDatabase connectData = new ConnectionDatabase();
             Connection conn = connectData.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(QUERYP_DETAILS_BookDetails);
-            pstmt.setString(1, BookId);
+            pstmt.setString(1, BookID);
             ResultSet rs = pstmt.executeQuery();
             Book book = null;
             if (rs.next()) {
