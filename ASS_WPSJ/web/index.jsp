@@ -219,60 +219,15 @@
                                                                 <div class="img-block"><a title="Kaplan AP World History 2 009 Edition" href="/" class="product-image"><img title="Kaplan AP World History 2 009 Edition" alt="Kaplan AP World History 2 009 Edition" src="<jsp:getProperty name="book" property="images"/>" height="153" width="117"></a></div>
                                                                 <div class="price-box"><span id="product-price-13" class="regular-price"><span class="price"><span class="small-price-txt">$</span>17.50</span></span></div>
                                                                 <div class="details-block">
-                                                                    <div class="details-block"><a class="details-link" href="/">Details</a></div>
+                                                                    <div class="details-block"><a class="details-link" href="Details.php?action=Model.Action.actionDetails&BookID=${book.id}">Details</a></div>
                                                                     <a class="no-decore link-cart" href="/"><button class="button"><span><span><span>Add to cart</span></span></span></button></a>
                                                                 </div><div class="clear-block"></div></td>
                                                             <c:set value="${count+1}" var="count"/>
-<!--                                                            <td>
-                                                                <h3 class="product-name"><a title="Act Like a Lady, Think Like a Man" alt="Act Like a Lady, Think Like a Man" href="http://cms.template-help.com/magento_23462/books/literature-fiction/act-like-a-lady-think-like-a-man.html">Act Like a Lady, Think Like a Man</a></h3>
-                                                                <div class="img-block"><a title="Act Like a Lady, Think Like a Man" href="http://cms.template-help.com/magento_23462/books/literature-fiction/act-like-a-lady-think-like-a-man.html" class="product-image"><img title="Act Like a Lady, Think Like a Man" alt="Act Like a Lady, Think Like a Man" src="images/img2.jpg" height="153" width="117"></a></div>
-                                                                <div class="price-box"><span id="product-price-13" class="regular-price"><span class="price"><span class="small-price-txt">$</span>17.50</span></span></div>
-                                                                <div class="details-block">
-                                                                    <div class="details-block"><a class="details-link" href="http://cms.template-help.com/magento_23462/books/literature-fiction/act-like-a-lady-think-like-a-man.html">Details</a></div>
-                                                                    <a class="no-decore link-cart" href="http://cms.template-help.com/magento_23462/books/literature-fiction/act-like-a-lady-think-like-a-man.html"><button class="button"><span><span><span>Add to cart</span></span></span></button></a>
-                                                                </div><div class="clear-block"></div></td>
-                                                            <td class="last">
-                                                                <h3 class="product-name prd-nm"><a title="Breaking Dawn" alt="Breaking Dawn" href="http://cms.template-help.com/magento_23462/books/science-education/breaking-dawn.html">Breaking Dawn</a></h3>
-                                                                <div class="img-block"><a title="Breaking Dawn" href="http://cms.template-help.com/magento_23462/books/science-education/breaking-dawn.html" class="product-image"><img title="Breaking Dawn" alt="Breaking Dawn" src="images/img3.jpg" height="153" width="117"></a></div>
-                                                                <div class="price-box"><span id="product-price-13" class="regular-price"><span class="price"><span class="small-price-txt">$</span>21.50</span></span></div>
-                                                                <div class="details-block">
-                                                                    <div class="details-block"><a class="details-link" href="http://cms.template-help.com/magento_23462/books/science-education/breaking-dawn.html">Details</a></div>
-                                                                    <a class="no-decore link-cart" href="http://cms.template-help.com/magento_23462/books/science-education/breaking-dawn.html"><button class="button"><span><span><span>Add to cart</span></span></span></button></a>
-                                                                </div><div class="clear-block"></div></td>-->
-<c:if test="${count==3}">
+                                                        <c:if test="${count==3}">
                                                         </tr>
                                                         <c:set value="1" var="count"/>
                                                         </c:if>
                                                         </c:forEach>
-<!--                                                        <tr class="even">
-                                                            <td class="devider-product last" colspan="3">
-                                                            </td></tr>-->
-<!--                                                        <tr class="first odd row2">
-                                                            <td>
-                                                                <h3 class="product-name prd-nm"><a title="Watchmen" alt="Watchmen" href="http://cms.template-help.com/magento_23462/audiobooks/watchmen.html">Watchmen</a></h3>
-                                                                <div class="img-block"><a title="Watchmen" href="http://cms.template-help.com/magento_23462/audiobooks/watchmen.html" class="product-image"><img title="Watchmen" alt="Watchmen" src="images/img4.jpg" height="153" width="117"></a></div>
-                                                                <div class="price-box"><span id="product-price-13" class="regular-price"><span class="price"><span class="small-price-txt">$</span>11.50</span></span></div>
-                                                                <div class="details-block">
-                                                                    <div class="details-block"><a class="details-link" href="http://cms.template-help.com/magento_23462/audiobooks/watchmen.html">Details</a></div>
-                                                                    <a class="no-decore link-cart" href="http://cms.template-help.com/magento_23462/audiobooks/watchmen.html"><button class="button"><span><span><span>Add to cart</span></span></span></button></a>
-                                                                </div><div class="clear-block"></div></td>
-                                                            <td>
-                                                                <h3 class="product-name"><a title="The Last Straw (Diary of a Wimpy Kid Series #3)" alt="The Last Straw (Diary of a Wimpy Kid Series #3)" href="%7B%7Bstore%20url=" "}childrens="" the-last-straw-diary-of-a-wimpy-kid-series-3.html"="">The Last Straw (Diary of a Wimpy Kid Series #3)</a></h3>
-                                                                <div class="img-block"><a title="The Last Straw (Diary of a Wimpy Kid Series #3)" href="http://cms.template-help.com/magento_23462/childrens/the-last-straw-diary-of-a-wimpy-kid-series-3.html" class="product-image"><img title="The Last Straw (Diary of a Wimpy Kid Series #3)" alt="The Last Straw (Diary of a Wimpy Kid Series #3)" src="images/img5.jpg" height="153" width="117"></a></div>
-                                                                <div class="price-box"><span id="product-price-13" class="regular-price"><span class="price"><span class="small-price-txt">$</span>17.50</span></span></div>
-                                                                <div class="details-block">
-                                                                    <div class="details-block"><a class="details-link" href="http://cms.template-help.com/magento_23462/childrens/the-last-straw-diary-of-a-wimpy-kid-series-3.html">Details</a></div>
-                                                                    <a class="no-decore link-cart" href="http://cms.template-help.com/magento_23462/childrens/the-last-straw-diary-of-a-wimpy-kid-series-3.html"><button class="button"><span><span><span>Add to cart</span></span></span></button></a>
-                                                                </div><div class="clear-block"></div></td>
-                                                            <td class="last">
-                                                                <h3 class="product-name prd-nm"><a title="Strengths Finder 2.0" alt="Strengths Finder 2.0" href="http://cms.template-help.com/magento_23462/businness/strengths-finder-2-0.html">Strengths Finder 2.0</a></h3>
-                                                                <div class="img-block"><a title="Breaking Dawn" href="http://cms.template-help.com/magento_23462/businness/strengths-finder-2-0.html" class="product-image"><img title="Strengths Finder 2.0" alt="Strengths Finder 2.0" src="images/img6.jpg" height="153" width="117"></a></div>
-                                                                <div class="price-box"><span id="product-price-13" class="regular-price"><span class="price"><span class="small-price-txt">$</span>21.50</span></span></div>
-                                                                <div class="details-block">
-                                                                    <div class="details-block"><a class="details-link" href="http://cms.template-help.com/magento_23462/businness/strengths-finder-2-0.html">Details</a></div>
-                                                                    <a class="no-decore link-cart" href="http://cms.template-help.com/magento_23462/businness/strengths-finder-2-0.html"><button class="button"><span><span><span>Add to cart</span></span></span></button></a>
-                                                                </div><div class="clear-block"></div></td>
-                                                        </tr>-->
                                                     </tbody>
                                                 </table>
                                             </div>
