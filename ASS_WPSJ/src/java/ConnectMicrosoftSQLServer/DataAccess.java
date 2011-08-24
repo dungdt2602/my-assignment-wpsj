@@ -158,6 +158,8 @@ public class DataAccess {
             }
             keyWord = "%" + keyWord + "%";
             PreparedStatement pstmt = conn.prepareStatement(QUERY_SEARCH_BOOK);
+            pstmt.setString(1, keyWord);
+            pstmt.setString(2, keyWord);
             ResultSet rs = pstmt.executeQuery();
             ArrayList<Book> books = new ArrayList<Book>();
             while (rs.next()) {
