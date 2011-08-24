@@ -122,11 +122,11 @@
                 <div class="main col2-left-layout">
                     <div class="bg-main">
                         <div class="col-left sidebar"><div class="block block-sidesearch">
-                                <div class="block-content"><form id="search_mini_form" action="Search.html" method="get">
+                                <div class="block-content"><form id="search_mini_form" action="search.php?action=Model.Action.actionSearch" method="post">
                                         <fieldset class="form-search">
                                             <legend>Search Site</legend>
                                             <label>Search:</label>
-                                            <div><input autocomplete="off" id="search" class="input-text" name="q" value="" type="text">
+                                            <div><input autocomplete="off" id="search" class="input-text" name="keyword" type="text"/>
                                                 <button type="submit" class="button button-search"><span><span><span>&nbsp;</span></span></span></button>
                                                 <div style="display: none;" id="search_autocomplete" class="search-autocomplete"></div>
                                                 <script type="text/javascript">
